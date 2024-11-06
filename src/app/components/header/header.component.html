@@ -1,0 +1,20 @@
+  <header class="cabecalho">
+    <div class="container-logo">
+      <a href="/">
+        <h1>Dom Casmurro</h1>
+      </a>
+    </div>
+    <div class="container-botoes">
+      <div class="icone-home">
+        <a href="/">
+          <img src="assets/home-icon.svg" alt="Ícone de uma Casa">
+        </a>
+      </div>
+      <div class="icone-menu" (click)="alternarMenu()">
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+      </div>
+    <app-menu [menuAberto]="menuAberto"></app-menu>
+    </div>
+  </header>
