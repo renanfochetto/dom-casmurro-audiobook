@@ -1,6 +1,6 @@
 /* Botão para abrir e fechar o menu */
 .menu-toggle {
-  position: absolute; /* Fixado no topo esquerdo da tela */
+  position: fixed; /* Fixado no topo esquerdo da tela */
   top: 120px;
   left: 0;
   font-size: 0.9rem;
@@ -21,11 +21,11 @@
 }
 
 .menu-toggle.menu-visible {
-  left: 325px;
+  position: fixed;
+  left: 297px;
   transition: left 0.3s ease;
 }
 
-/* Menu lateral */
 .menu-lateral {
   position: fixed;
   top: 120px;
@@ -57,33 +57,40 @@
 .menu-lateral.menu-visible {
   left: 0;
 }
-.capitulos {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 .capitulos h4 {
+  text-align: center;
   font-size: 1.2em;
-  margin: 0 0 0.6rem 0;
-  padding: 0;
+  border-bottom: 1px solid #c9c6c6;
+  margin: 0;
+  padding: 0 0 1rem 0;
 }
 
 .capitulos ul {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .capitulos li {
+  width: 95%;
   display: flex;
-  flex-direction: column;
+  gap: 0.8rem;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
   padding: 0.6rem;
   cursor: pointer;
   border-bottom: 1px solid #c9c6c6;
+}
+
+.capitulos-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .capitulos li:last-child {

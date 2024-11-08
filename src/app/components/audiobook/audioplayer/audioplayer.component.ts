@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, OnDestroy, Output, EventEmitter, OnChanges, SimpleChanges} from '@angular/core';
 import { FormsModule } from "@angular/forms";
-import { NgIf } from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 import { TranscricaoComponent } from "../transcricao/transcricao.component";
 import { AudioService } from "../../../services/audio.service";
 
@@ -11,7 +11,8 @@ import { AudioService } from "../../../services/audio.service";
   imports: [
     FormsModule,
     NgIf,
-    TranscricaoComponent
+    TranscricaoComponent,
+    NgForOf
   ],
   styleUrl: './audioplayer.component.css'
 })
@@ -20,6 +21,7 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
   @Input() audioIndex: number = 0;
   @Output() capituloMudou: EventEmitter<number> = new EventEmitter<number>();
   @Output() audioTerminou: EventEmitter<void> = new EventEmitter<void>();
+  @Output() duracaoCapitulo: EventEmitter<number> = new EventEmitter<number>();
 
   private audioElement!: HTMLAudioElement;
 
@@ -34,7 +36,9 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
 
   isVolumeControlVisible: boolean = false;
   isSpeedControlVisible: boolean = false;
-  selectedSpeed: number = 1;
+
+  speeds: number[] = [0.5, 0.75, 1, 1.25, 1.5, 2]
+  selectedSpeed: number = this.speeds[2];
 
   constructor(private audioService: AudioService) {}
 
@@ -44,7 +48,6 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['audioIndex'] && this.audioIndex !== changes['audioIndex'].currentValue) {
-      console.log('Capítulo mudou:', this.audioIndex);
       this.initializeAudio();
       this.updateNavigateButtons();
     }
@@ -60,9 +63,7 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   private initializeAudio(): void {
-    console.log('Inicializando audio:', this.audioIndex);
     if(this.audioElement) {
-      console.log(this.audioElement)
       this.cleanupAudio();
     }
     if (this.audioIndex >= 0 && this.audioIndex < this.audioService.getAudios().length) {
@@ -87,7 +88,6 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
       this.audioElement.pause();
       this.audioElement.src = '';
       this.audioElement.load();
-      console.log('Audio limpo');
     }
   }
 
@@ -137,15 +137,15 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
 
   toggleSpeedControl() {
     this.isSpeedControlVisible = !this.isSpeedControlVisible;
-    console.log('Visibilidade da lista de velocidades:', this.isSpeedControlVisible);
+    console.log(this.isSpeedControlVisible)
   }
 
-  changeSpeed(speed: number) {
+  changeSpeed(event: any) {
+    const speed = parseFloat(event.target.value);
     this.selectedSpeed = speed;
-    if (this.audioElement) {
+    if(this.audioElement) {
       this.audioElement.playbackRate = speed;
     }
-    this.isSpeedControlVisible = false;
   }
 
   toggleVolumeControl() {

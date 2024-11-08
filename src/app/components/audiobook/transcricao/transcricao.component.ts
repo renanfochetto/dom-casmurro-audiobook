@@ -32,7 +32,7 @@ export class TranscricaoComponent implements OnInit, OnChanges {
     const capitulo = this.audioService.getCapitulo(this.capituloIndex);
     if(capitulo) {
       this.texto = capitulo;
-      this.textoExibido = this.texto.substring(0, 300);
+      this.textoExibido = this.texto.substring(0, 100);
     } else {
       this.texto = 'Capítulo não encontrado';
       this.textoExibido = this.texto;
@@ -44,7 +44,7 @@ export class TranscricaoComponent implements OnInit, OnChanges {
     if(this.textoExpandido) {
       this.textoExibido = this.texto;
     } else {
-      this.textoExibido = this.texto.substring(0, 300);
+      this.textoExibido = this.texto.substring(0, 100);
     }
   }
 }

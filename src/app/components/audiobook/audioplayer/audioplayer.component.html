@@ -1,35 +1,4 @@
 <div class="audio-player">
-
-  <div class="controls">
-    <!-- Controles de Velocidade -->
-    <div class="speed-controls">
-      <button (click)="toggleSpeedControl()">
-        <span>{{ selectedSpeed }}x</span>
-      </button>
-    </div>
-
-    <!-- Lista de Velocidades -->
-    <div class="speed-list" *ngIf="isSpeedControlVisible">
-      <button (click)="changeSpeed(0.5)">0.5x</button>
-      <button (click)="changeSpeed(0.75)">0.75x</button>
-      <button (click)="changeSpeed(1)">1x</button>
-      <button (click)="changeSpeed(1.25)">1.25x</button>
-      <button (click)="changeSpeed(1.5)">1.5x</button>
-      <button (click)="changeSpeed(2)">2x</button>
-    </div>
-
-    <!-- Controles de Volume -->
-    <div class="volume-controls">
-      <button (click)="toggleVolumeControl()">
-        <img *ngIf="volume > 0" src="assets/icons/volume.svg" alt="Volume">
-        <img *ngIf="volume === 0" src="assets/icons/mute.svg" alt="Mute">
-      </button>
-      <div class="volume-bar" *ngIf="isVolumeControlVisible">
-      <input type="range" [(ngModel)]="volume" min="0" max="1" step="0.01" (input)="adjustVolume()">
-      </div>
-    </div>
-  </div>
-
   <!-- Barra de progresso -->
   <div class="audio-progress-container">
     <!-- Tempo atual -->
@@ -40,7 +9,6 @@
     <!-- Tempo total -->
     <span class="total-time">{{ formatTime(duration) }}</span>
   </div>
-
   <!-- Controles principais -->
   <div class="audio-controls">
     <!-- Botão Anterior -->
@@ -56,6 +24,24 @@
     <button class="next-btn" (click)="nextChapter()" [disabled]="isNextDisabled">
       <img src="assets/icons/next.svg" alt="Próximo" />
     </button>
+    <!-- Controles de Velocidade -->
+    <div class="speed-controls">
+      <select (change)="changeSpeed($event)" [(ngModel)]="selectedSpeed">
+        <option *ngFor="let speed of speeds" [value]="speed">{{ speed }}x</option>
+      </select>
+    </div>
+    <!-- Controles de Volume -->
+    <div class="volume-controls">
+      <button (click)="toggleVolumeControl()">
+        <img *ngIf="volume > 0" src="assets/icons/volume.svg" alt="Volume">
+        <img *ngIf="volume === 0" src="assets/icons/mute.svg" alt="Mute">
+      </button>
+      <div class="volume-bar" *ngIf="isVolumeControlVisible">
+        <input type="range" [(ngModel)]="volume" min="0" max="1" step="0.01" (input)="adjustVolume()">
+      </div>
+    </div>
+
+
   </div>
   <app-transcricao [capituloIndex]="audioIndex"></app-transcricao>
 </div>

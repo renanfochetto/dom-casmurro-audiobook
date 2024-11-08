@@ -11,8 +11,15 @@
     <h4>Menu de Seções</h4>
     <ul>
       <li *ngFor="let capitulo of capitulos; let i = index" (click)="selectChapter(i)">
-        <span class="titulo">{{ capitulo.titulo }} - {{ capitulo.subtitulo }}</span>
-        <span class="leitor">Leitor: {{ capitulo.leitor }}</span>
+        <span class="capitulos-info">
+          <span class="titulo">{{ capitulo.titulo }}</span>
+          <span class="subtitulo">{{ capitulo.subtitulo }}</span>
+          <span class="leitor">Leitor: {{ capitulo.leitor }}</span>
+        </span>
+        <span class="capitulos-tempo">
+          <p>{{ capitulo.tempo }}</p>
+        </span>
+
       </li>
     </ul>
   </div>

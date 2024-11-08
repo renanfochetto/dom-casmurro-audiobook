@@ -5,5 +5,6 @@ export interface AudioData {
   leitor: string;
   numeroSecao: number;
   texto: string;
+  tempo: string;
   capitulo: string;
 }
