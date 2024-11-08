@@ -1,0 +1,96 @@
+/* Botão para abrir e fechar o menu */
+.menu-toggle {
+  position: absolute; /* Fixado no topo esquerdo da tela */
+  top: 120px;
+  left: 0;
+  font-size: 0.9rem;
+  background-color: #ecebeb;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  border: none;
+  color: black;
+  width: 3rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.menu-toggle img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.menu-toggle.menu-visible {
+  left: 325px;
+  transition: left 0.3s ease;
+}
+
+/* Menu lateral */
+.menu-lateral {
+  position: fixed;
+  top: 120px;
+  left: -500px;
+  background-color: #ecebeb;
+  font-size: 1rem;
+  padding: 1rem;
+  height: 60%;
+  color: black;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.menu-lateral::-webkit-scrollbar {
+  width: 10px;
+}
+
+.menu-lateral::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.menu-lateral::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+}
+
+.menu-lateral.menu-visible {
+  left: 0;
+}
+.capitulos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.capitulos h4 {
+  font-size: 1.2em;
+  margin: 0 0 0.6rem 0;
+  padding: 0;
+}
+
+.capitulos ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.capitulos li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  cursor: pointer;
+  border-bottom: 1px solid #c9c6c6;
+}
+
+.capitulos li:last-child {
+  border-bottom: none;
+}
+
+.capitulos li:hover {
+  background-color: #ffcc00;
+}
+

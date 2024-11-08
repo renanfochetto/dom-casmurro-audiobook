@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
@@ -13,4 +13,9 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 })
 export class MenuComponent {
   @Input() menuAberto: boolean = false;
+  @Output() fecharMenu = new EventEmitter<void>();
+
+  onLinkClick() {
+    this.fecharMenu.emit();
+  }
 }

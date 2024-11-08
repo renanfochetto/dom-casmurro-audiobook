@@ -40,6 +40,10 @@
   z-index: 2;
 }
 
+.icone-menu-acao {
+  color: white;
+}
+
 .icone-menu .linha {
   background-color: white;
   height: 2px;

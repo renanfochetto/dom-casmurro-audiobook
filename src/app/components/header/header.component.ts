@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from "@angular/router";
-import { NgClass } from "@angular/common";
+import {NgClass, NgIf} from "@angular/common";
 import {MenuComponent} from "./menu/menu.component";
 
 @Component({
@@ -8,7 +8,8 @@ import {MenuComponent} from "./menu/menu.component";
   standalone: true,
   imports: [
     RouterLink,
-    MenuComponent
+    MenuComponent,
+    NgIf
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'

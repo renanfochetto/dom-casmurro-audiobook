@@ -1,1 +1,20 @@
-<p>menu-lateral works!</p>
+<!-- Botão que abre e fecha o menu lateral -->
+<button class="menu-toggle" [ngClass]="{'menu-visible': isMenuVisible}" (click)="toggleMenu()">
+  <span *ngIf="!isMenuVisible"><img src="/assets/icons/open.svg" alt=""></span>
+  <span *ngIf="isMenuVisible"><img src="/assets/icons/close.svg" alt=""></span>
+</button>
+
+<!-- Menu lateral com lista de capítulos -->
+<div class="menu-lateral" [ngClass]="{'menu-visible': isMenuVisible}">
+  <!--Lista de Capítulos-->
+  <div class="capitulos">
+    <h4>Menu de Seções</h4>
+    <ul>
+      <li *ngFor="let capitulo of capitulos; let i = index" (click)="selectChapter(i)">
+        <span class="titulo">{{ capitulo.titulo }} - {{ capitulo.subtitulo }}</span>
+        <span class="leitor">Leitor: {{ capitulo.leitor }}</span>
+      </li>
+    </ul>
+  </div>
+
+</div>

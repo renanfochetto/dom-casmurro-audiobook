@@ -1,1 +1,9 @@
-<p>transcricao works!</p>
+<div class="transcricao">
+  <p>{{ textoExibido }}</p>
+
+  <!-- Se o texto não estiver expandido, mostra o botão "Ver mais" -->
+  <button *ngIf="!textoExpandido" (click)="alternarTextoExpandido()">Ver mais</button>
+
+  <!-- Se o texto estiver expandido, mostra o botão "Ver menos" -->
+  <button *ngIf="textoExpandido" (click)="alternarTextoExpandido()">Ver menos</button>
+</div>

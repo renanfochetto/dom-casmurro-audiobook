@@ -7,14 +7,13 @@
     <div class="container-botoes">
       <div class="icone-home">
         <a href="/">
-          <img src="assets/home-icon.svg" alt="Ícone de uma Casa">
+          <img src="/assets/icons/home.svg" alt="Ícone de uma Casa">
         </a>
       </div>
       <div class="icone-menu" (click)="alternarMenu()">
-        <div class="linha"></div>
-        <div class="linha"></div>
-        <div class="linha"></div>
+        <img class="icone-menu-acao" *ngIf="!menuAberto" src="/assets/icons/menu.svg" alt="Ícone Menu de Opções">
+        <img class="icone-menu-acao" *ngIf="menuAberto" src="/assets/icons/close-menu.svg" alt="Ícone de Fechar">
       </div>
-    <app-menu [menuAberto]="menuAberto"></app-menu>
+    <app-menu [menuAberto]="menuAberto" (fecharMenu)="menuAberto = false"></app-menu>
     </div>
   </header>

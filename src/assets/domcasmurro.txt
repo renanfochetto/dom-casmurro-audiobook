@@ -1,5 +1,14 @@
+"Uma capa de livro clássica e sombria. Uma paisagem urbana do Rio de Janeiro do século XIX, com casas antigas e
+ruas de paralelepípedos. No centro, uma figura masculina em um terno escuro e elegante, com um olhar pensativo
+e melancólico. O homem está de perfil, como se estivesse olhando para o horizonte, com uma expressão contemplativa.
+Ao fundo, uma silhueta de uma mulher parcialmente visível, com cabelos ondulados e uma expressão misteriosa,
+sugerindo suspeitas de traição. A atmosfera é densa e melancólica, com tons de cinza, marrom e verde envelhecido,
+evocando um sentimento de dúvida e mistério. O estilo é realista, com um toque de iluminação dramática. Precisa
+conter o texto "Dom Casmurro" na parte inferior da imagem."
+
+
 The Project Gutenberg eBook of Dom Casmurro
-    
+
 This ebook is for the use of anyone anywhere in the United States and
 most other parts of the world at no cost and with almost no restrictions
 whatsoever. You may copy it, give it away or re-use it under the terms
@@ -8751,7 +8760,7 @@ INDICE
 *** END OF THE PROJECT GUTENBERG EBOOK DOM CASMURRO ***
 
 
-    
+
 
 Updated editions will replace the previous one—the old editions will
 be renamed.
@@ -8856,7 +8865,7 @@ performed, viewed, copied or distributed:
     at www.gutenberg.org. If you
     are not located in the United States, you will have to check the laws
     of the country where you are located before using this eBook.
-  
+
 1.E.2. If an individual Project Gutenberg™ electronic work is
 derived from texts not protected by U.S. copyright law (does not
 contain a notice indicating that it is posted with permission of the
@@ -8918,7 +8927,7 @@ provided that:
         Gutenberg Literary Archive Foundation at the address specified in
         Section 4, “Information about donations to the Project Gutenberg
         Literary Archive Foundation.”
-    
+
     • You provide a full refund of any money paid by a user who notifies
         you in writing (or by e-mail) within 30 days of receipt that s/he
         does not agree to the terms of the full Project Gutenberg™
@@ -8926,15 +8935,15 @@ provided that:
         copies of the works possessed in a physical medium and discontinue
         all use of and all access to other copies of Project Gutenberg™
         works.
-    
+
     • You provide, in accordance with paragraph 1.F.3, a full refund of
         any money paid for a work or a replacement copy, if a defect in the
         electronic work is discovered and reported to you within 90 days of
         receipt of the work.
-    
+
     • You comply with all other terms of this agreement for free
         distribution of Project Gutenberg™ works.
-    
+
 
 1.E.9. If you wish to charge a fee or distribute a Project
 Gutenberg™ electronic work or group of works on different terms than

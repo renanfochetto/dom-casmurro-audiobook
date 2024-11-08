@@ -1,1 +1,13 @@
-<p>audiobook works!</p>
+<app-menu-lateral (capituloSelecionado)="selectChapter($event)"></app-menu-lateral>
+<section>
+  <h1>Dom Casmurro Audiobook</h1>
+  <h2>{{ audioData?.titulo }}</h2>
+  <h3>{{ audioData?.subtitulo }}</h3>
+  <h4>Leitor: {{ audioData?.leitor }}</h4>
+
+  <app-audioplayer
+    [audioSrc]="audioData.src"
+    [audioIndex]="currentAudioIndex"
+    (capituloMudou)="onCapituloMudou($event)"
+    (audioTerminou)="audioTerminou()"></app-audioplayer>
+</section>
