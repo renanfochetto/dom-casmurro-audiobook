@@ -1,10 +1,10 @@
 <div class="transcricao">
-  <p>{{ textoExibido }}</p>
+  <p [innerHTML]="textoExibido"></p>
   <!-- Overlay de cobertura quando o texto não está expandido -->
   <div *ngIf="!textoExpandido" class="overlay"></div>
 </div>
   <!-- Botões de alternância -->
 <div class="botao-container">
-  <button *ngIf="!textoExpandido" (click)="alternarTextoExpandido()">Ver mais</button>
-  <button *ngIf="textoExpandido" (click)="alternarTextoExpandido()">Ver menos</button>
+  <button *ngIf="!textoExpandido" (click)="alternarTextoExpandido()"><img src="/assets/icons/down.svg" alt="Ícone de Ver Mais">Ver mais</button>
+  <button *ngIf="textoExpandido" (click)="alternarTextoExpandido()"><img src="/assets/icons/up.svg" alt="">Fechar</button>
 </div>

@@ -1,16 +1,16 @@
-
-
 .transcricao {
   display: flex;
   flex-direction: column;
   position: relative;
   justify-content: center;
+  text-align: justify;
+  margin-top: 0.8rem;
 }
 
 .transcricao p {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -20,7 +20,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.6));
+  background: linear-gradient(to top, rgba(241, 227, 211, 1), rgba(241, 227, 211, 0.6));
   z-index: 1;
   pointer-events: none;
 }
@@ -29,13 +29,29 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 2rem;
 }
 
 button {
+  font-family: "Roboto", sans-serif;
+  color: #2c3e50;
+  font-size: 0.75rem;
   display: flex;
+  gap: 0.2rem;
   justify-content: center;
+  flex-direction: column-reverse;
   align-items: center;
   z-index: 2;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  border: none;
+  background-color: #f1e3d3;
+  cursor: pointer;
+}
+
+button:hover {
+  font-weight: 600;
+}
+
+button img {
+  width: 1.5rem;
 }

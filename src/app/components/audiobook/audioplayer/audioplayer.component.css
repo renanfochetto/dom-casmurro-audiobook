@@ -1,7 +1,9 @@
 .audio-player {
+  font-family: "Lora", serif;
   display: flex;
   flex-direction: column;
-  width: 20rem;
+  width: 60%;
+  margin: 1rem auto;
 }
 
 .prev-btn:disabled,
@@ -17,25 +19,27 @@
 }
 
 .audio-progress-container {
+  font-family: "Roboto", sans-serif;
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center;
+  color: #2c3e50;
   align-items: center;
-  margin: 1.2rem 0 1.5rem 0;
+  margin: 1rem 0 ;
 }
 
 .audio-progress {
-  width: 80%;
+  width: 20rem;
   height: 8px;
   background: #ddd;
   cursor: pointer;
   border-radius: 4px;
-  margin: 0 10px;
+  margin: 0 12px;
 }
 
 .audio-progress-bar {
   height: 100%;
-  background: #3498db;
+  width: 100%;
+  background: #4b5d46;
   border-radius: 4px;
 }
 
@@ -48,7 +52,7 @@
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 10px;
+  margin: 0 0 0.8rem 0;
 }
 
 .audio-controls button {
@@ -86,9 +90,8 @@
 .volume-bar {
   display: flex;
   color: black;
-  bottom: 5rem;
+  left: 2.3rem;
   justify-content: center;
-  transform: rotate(-90deg);
   position: absolute;
   height: 10px;
   padding: 0.5rem;
@@ -114,9 +117,10 @@
 }
 
 .speed-controls select {
+  font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
-  background-color: #ecebeb;
-  border: 1px solid #ecebeb;
+  background-color: #f1e3d3;
+  border: 1px solid #2c3e50;
   color: black;
   text-align: center;
   border-radius: 0.3rem;
@@ -124,8 +128,4 @@
   padding: 2px 0;
   position: absolute;
   z-index: 10;
-}
-
-.speed-controls select:hover {
-  border: black 1px solid;
 }

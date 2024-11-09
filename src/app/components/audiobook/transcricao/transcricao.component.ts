@@ -31,7 +31,7 @@ export class TranscricaoComponent implements OnInit, OnChanges {
   carregarTexto():void {
     const capitulo = this.audioService.getCapitulo(this.capituloIndex);
     if(capitulo) {
-      this.texto = capitulo;
+      this.texto = capitulo.replace(/\n/g, '<br>');
       this.textoExibido = this.texto.substring(0, 100);
     } else {
       this.texto = 'Capítulo não encontrado';

@@ -1,21 +1,56 @@
-.container-principal {
-  margin: 0;
-  display: flex;
+.introducao {
+  font-family: "Lora", serif;
+  line-height: 1.4rem;
+  margin: 1.5rem auto;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
+  color: #2c3e50;
+  padding: 2rem;
+  width: 60%;
+  text-align: justify;
 }
 
-.introducao {
-  color: black;
-  padding: 2rem;
-  text-align: center;
+.introducao h4 {
+  font-family: "Faculty Glyphic", sans-serif;
+  font-size: 1.2rem;
+  padding: 1rem 0 0 3rem;
+}
+
+.introducao p::first-letter {
+  font-size: 1.2rem;
+  padding-left: 1.5rem;
+}
+
+.introducao-topo {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2.5rem;
+}
+
+.introducao-topo-texto {
+  margin-left: 2rem;
 }
 
 .introducao img {
-  width: 12rem;
+  width: 18rem;
+  height: 22rem;
 }
 
-.introducao h2 {
-  font-size: 2rem;
+.introducao span {
+  margin: 2rem 1rem 0 3rem;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
+
+.introducao span a {
+  padding-left: 0.3rem;
+  font-size: 1rem;
+  color: #8e3b46;
+}
+
+.introducao-topo-texto h3 {
+  font-family: "Faculty Glyphic", sans-serif;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+

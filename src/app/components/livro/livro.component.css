@@ -1,21 +1,45 @@
-.container-principal {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-}
-
 .introducao {
-  color: black;
+  font-family: "Lora", serif;
+  line-height: 1.4rem;
+  margin: 1.5rem auto;
+  flex-direction: column;
+  color: #2c3e50;
   padding: 2rem;
+  width: 60%;
+  text-align: justify;
+}
+
+.introducao h3 {
+  font-family: "Faculty Glyphic", sans-serif;
   text-align: center;
+  font-size: 1.8rem;
 }
 
-.introducao img {
-  width: 12rem;
+.introducao h4 {
+  font-family: "Faculty Glyphic", sans-serif;
+  font-size: 1.2rem;
+  padding: 1rem 0 0 3rem;
 }
 
-.introducao h2 {
-  font-size: 2rem;
+.introducao h6 {
+  font-family: "Faculty Glyphic", sans-serif;
+  font-size: 1rem;
+  padding-left: 3rem;
+}
+
+.introducao p::first-letter {
+  font-size: 1.2rem;
+  padding-left: 1.5rem;
+}
+
+.introducao span {
+  margin: 2rem 1rem 0 3rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.introducao span a {
+  padding-left: 0.3rem;
+  font-size: 1rem;
+  color: #8e3b46;
 }

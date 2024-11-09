@@ -1,9 +1,10 @@
 
 .menu-hamburger {
   position: fixed;
-  top: 0;
+  font-family: "Roboto", sans-serif;
+  top: 12px;
   right: -250px;
-  background-color: #003366;
+  background-color: rgba(0, 0, 0, 0);
   transition: right 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -11,7 +12,7 @@
 }
 
 .menu-hamburger.aberto {
-  right: 0;
+  right: 2rem;
 }
 
 .menu-hamburger ul {
@@ -20,21 +21,19 @@
   align-items: flex-end;
   list-style: none;
   gap: 1rem;
-  padding: 1rem 1rem 1rem 2rem;
+  padding: 0 1rem 0 2rem;
   cursor: pointer;
 }
 
-.menu-hamburger ul li {
-
-}
-
 .menu-hamburger ul li a {
-  color: white;
+  color: #8e3b46;
   text-decoration: none;
-  font-size: 0.8rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Roboto", sans-serif;
 }
 
 .menu-hamburger ul li a:hover {
-  color: #ffcc00;
+  color: #2c3e50;
 }
