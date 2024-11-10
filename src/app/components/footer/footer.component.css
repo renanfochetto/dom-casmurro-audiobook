@@ -1,10 +1,26 @@
 footer {
   display: flex;
   justify-content: flex-end;
-  padding: 1rem 2rem;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 3rem;
 }
 
-footer img {
-  width: 5rem;
+.logo-autor {
+  width: 4.2rem;
+  height: 1.6rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo-github {
+  width: 1.8rem;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.logo-autor:hover {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logo-github:hover {
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
 }

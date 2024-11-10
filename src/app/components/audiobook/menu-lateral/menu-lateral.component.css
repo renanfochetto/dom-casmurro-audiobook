@@ -3,17 +3,24 @@
   position: fixed;
   top: 100px;
   left: 0;
-  background-color: #f1e3d3;
+  background-color: #2c3e50;
   border-top-right-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
-  border: 1px solid #8e3b46;
+  border: 1px solid transparent;
   width: 2.5rem;
   padding: 0.5rem;
   cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.menu-toggle.menu-visible {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .menu-toggle:hover {
-  background-color: #bdc3c7;
+  background-color: #8e3b46;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .menu-toggle img {
@@ -26,16 +33,17 @@
   position: fixed;
   top: 150px;
   left: -500px;
-  background-color: #8e3b46;
+  background-color: #2c3e50;
   border: none;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   font-size: 0.8rem;
-  height: 50%;
+  height: 60%;
   color: white;
   transition: left 0.3s ease;
   overflow-y: auto;
   z-index: 100;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .menu-lateral::-webkit-scrollbar {
@@ -43,12 +51,12 @@
 }
 
 .menu-lateral::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
 
 .menu-lateral::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0);
   border-radius: 1rem;
 }
 
@@ -58,9 +66,10 @@
 
 .capitulos h4 {
   text-align: center;
-  font-family: "Lora", serif;
+  font-family: "Faculty Glyphic", sans-serif;
   color: white;
   font-size: 1.1em;
+  font-weight: 500;
   border-bottom: 1px solid white;
   margin: 0;
   padding: 1rem 0;
@@ -99,7 +108,7 @@
 }
 
 .capitulos li:hover {
-  background-color: #2c3e50;
+  background-color: #8e3b46;
 }
 
 .titulo {

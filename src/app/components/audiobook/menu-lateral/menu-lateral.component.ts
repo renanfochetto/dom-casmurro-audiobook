@@ -34,4 +34,5 @@ export class MenuLateralComponent implements OnInit{
     this.capituloSelecionado.emit(index);
     this.toggleMenu();
   }
+
 }

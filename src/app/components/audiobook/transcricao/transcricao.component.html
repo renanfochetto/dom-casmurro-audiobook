@@ -1,10 +1,8 @@
 <div class="transcricao">
-  <p [innerHTML]="textoExibido"></p>
-  <!-- Overlay de cobertura quando o texto não está expandido -->
-  <div *ngIf="!textoExpandido" class="overlay"></div>
+  <p *ngIf="textoExpandido" [innerHTML]="textoExibido" style="text-align: justify"></p>
 </div>
-  <!-- Botões de alternância -->
+<!-- Botões de alternância -->
 <div class="botao-container">
-  <button *ngIf="!textoExpandido" (click)="alternarTextoExpandido()"><img src="/assets/icons/down.svg" alt="Ícone de Ver Mais">Ver mais</button>
-  <button *ngIf="textoExpandido" (click)="alternarTextoExpandido()"><img src="/assets/icons/up.svg" alt="">Fechar</button>
+  <button *ngIf="!textoExpandido" (click)="alternarTextoExpandido()">Ler a Seção<img src="/assets/icons/book.svg" class="image-book" alt="Ícone de Ver Mais"></button>
+  <button *ngIf="textoExpandido" (click)="alternarTextoExpandido()" class="button-close">Fechar<img src="/assets/icons/close-text.svg" class="image-close" alt="Ícone de Recolher"></button>
 </div>

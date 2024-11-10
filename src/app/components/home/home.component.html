@@ -1,7 +1,10 @@
 <section class="pagina-principal">
-  <img src="/assets/domcasmurro-capa.jpg" alt="Imagem de Machado de Assis">
+  <img class="pagina-principal-imagem" src="/assets/domcasmurro-capa.jpg" alt="Imagem de Machado de Assis">
   <h2>Dom Casmurro</h2>
   <p>Explore o universo deste clássico da literatura brasileira, escrito por Machado de Assis.</p>
   <p>Ouça agora o audiobook completo de Dom Casmurro.</p>
-  <button [routerLink]="['/audiobook']"  routerLinkActive="active">Ouvir Agora</button>
+  <button [routerLink]="['/audiobook']"  routerLinkActive="active">
+    <img class="headphones-icon" src="/assets/icons/headphones.svg" alt="Ícone de Fone de Ouvido">
+    Ouvir Agora
+  </button>
 </section>

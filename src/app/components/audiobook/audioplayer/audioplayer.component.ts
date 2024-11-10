@@ -1,4 +1,14 @@
-import {Component, Input, OnInit, OnDestroy, Output, EventEmitter, OnChanges, SimpleChanges} from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  OnDestroy,
+  Output,
+  EventEmitter,
+  OnChanges,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import {NgForOf, NgIf} from "@angular/common";
 import { TranscricaoComponent } from "../transcricao/transcricao.component";
@@ -23,6 +33,8 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
   @Output() audioTerminou: EventEmitter<void> = new EventEmitter<void>();
   @Output() duracaoCapitulo: EventEmitter<number> = new EventEmitter<number>();
 
+  @ViewChild('transcricaoComponent') transcricaoComponent!: TranscricaoComponent;
+
   private audioElement!: HTMLAudioElement;
 
   public isPlaying: boolean = false;
@@ -37,6 +49,7 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
   isVolumeControlVisible: boolean = false;
   isSpeedControlVisible: boolean = false;
 
+
   speeds: number[] = [0.5, 0.75, 1, 1.25, 1.5, 2]
   selectedSpeed: number = this.speeds[2];
 
@@ -47,9 +60,12 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['audioIndex'] && this.audioIndex !== changes['audioIndex'].currentValue) {
+    if (changes['audioIndex'] || changes['audioSrc']) {
       this.initializeAudio();
       this.updateNavigateButtons();
+      if(this.transcricaoComponent) {
+        this.resetTranscricao();
+      }
     }
   }
 
@@ -62,7 +78,7 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
     this.cleanupAudio();
   }
 
-  private initializeAudio(): void {
+  public initializeAudio(): void {
     if(this.audioElement) {
       this.cleanupAudio();
     }
@@ -70,15 +86,21 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
       this.audioSrc = this.audioService.getAudios()[this.audioIndex].src;
       this.audioElement = new Audio(this.audioSrc);
       this.audioElement.preload = 'auto';
+      this.audioElement.playbackRate = this.selectedSpeed;
       this.audioElement.onloadedmetadata = (): void => {
+        if(this.audioElement.duration) {
         this.duration = this.audioElement.duration;
+      } else {
+          console.error('Error loading audio metadata');
+        }
       };
-      this.audioElement.ontimeupdate = (): void => {
-        this.currentTime = this.audioElement.currentTime;
-        this.progressWidth = `${(this.currentTime / this.duration) * 100}%`;
-      };
+      this.audioElement.onplay = (): void => {
+        console.log('Playing');
+      }
       this.audioElement.onended = (): void => {
+        console.log('Ended');
         this.audioTerminou.emit();
+        this.nextChapter();
       };
     }
   }
@@ -112,7 +134,8 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
     this.audioIndex = this.audioIndex + 1;
     this.capituloMudou.emit(this.audioIndex);
     this.updateNavigateButtons();
-    this.initializeAudio()
+    this.initializeAudio();
+    this.resetTranscricao();
   }
 
   previousChapter(): void {
@@ -120,8 +143,15 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
     this.resetPlayer();
     this.audioIndex = this.audioIndex - 1;
     this.capituloMudou.emit(this.audioIndex);
-    this.updateNavigateButtons()
-    this.initializeAudio()
+    this.updateNavigateButtons();
+    this.initializeAudio();
+    this.resetTranscricao();
+  }
+
+  resetTranscricao(): void {
+    if(this.transcricaoComponent) {
+      this.transcricaoComponent.resetEstado();
+    }
   }
 
   resetPlayer(): void {
@@ -169,7 +199,17 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
   seek(event: MouseEvent) {
     const progressBar = (event.target as HTMLElement).getBoundingClientRect();
     const clickPosition = event.clientX - progressBar.left;
-    this.audioElement.currentTime = (clickPosition / progressBar.width) * this.audioElement.duration
+    const clampedPosition = Math.max(0, Math.min(clickPosition, progressBar.width));
+    const newTime = (clampedPosition / progressBar.width) * this.audioElement.duration;
+    console.log(clickPosition, clampedPosition, newTime);
+
+    this.audioElement.currentTime = newTime;
+    requestAnimationFrame(() => {
+      this.currentTime = this.audioElement.currentTime;
+      this.progressWidth = `${(this.currentTime / this.duration) * 100}%`;
+      console.log(`[Seek] Atualizado currentTime: ${this.currentTime.toFixed(2)}s`);
+      console.log(`[Seek] Barra de progresso: ${this.progressWidth}`);
+    });
   }
 
   formatTime(time: number): string {

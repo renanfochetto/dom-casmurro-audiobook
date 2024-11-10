@@ -1,6 +1,6 @@
-LI
+<center><b>LI
 
-Entre luz e fusco.
+Entre luz e fusco.</b></center>
 
 Entre luz e fusco, tudo ha de ser breve como esse instante. Nem durou
 muito a nossa despedida, foi o mais que pôde, em casa della, na sala
@@ -22,9 +22,9 @@ antes della a vocação. Mas a vocação eras tu, a investidura eras tu.
 
 
 
-LII
+<center><b>LII
 
-O velho Padua.
+O velho Padua.</b></center>
 
 Ja agora conto tambem os adeuses do velho Padua. Logo cedo veiu á nossa
 casa. Minha mãe disse-lhe que fosse falar-me ao quarto.
@@ -79,9 +79,9 @@ vê sair branco o maldito numero,--um numero tão bonito!
 
 
 
-LIII
+<center><b>LIII
 
-A caminho!
+A caminho!</b></center>
 
 Fui para o seminario. Poupa-me as outras despedidas. Minha mãe
 apertava-me ao peito. Prima Justina suspirava. Talvez chorasse mal ou
@@ -130,9 +130,9 @@ rezando por vosmecê!» Na rua José Dias insistiu nas esperanças:
 
 
 
-LIV
+<center><b>LIV
 
-Panegyrico de Santa Monica.
+Panegyrico de Santa Monica.</b></center>
 
 No seminario... Ah! não vou contar o seminario, nem me bastaria a isso
 um capitulo. Não, senhor meu amigo; algum dia, sim, é possivel que
@@ -235,9 +235,9 @@ silencio, recolhendo os olhos e um suspiro!
 
 
 
-LV
+<center><b>LV
 
-Um soneto.
+Um soneto.</b></center>
 
 Dita a palavra, apertou-me as mãos com as forças todas de um vasto
 agradecimento, despediu-se e saiu. Fiquei só com o _Panegyrico_, e

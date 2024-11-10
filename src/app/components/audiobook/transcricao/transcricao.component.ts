@@ -28,23 +28,34 @@ export class TranscricaoComponent implements OnInit, OnChanges {
     }
   }
 
-  carregarTexto():void {
-    const capitulo = this.audioService.getCapitulo(this.capituloIndex);
-    if(capitulo) {
-      this.texto = capitulo.replace(/\n/g, '<br>');
-      this.textoExibido = this.texto.substring(0, 100);
+  carregarTexto(): void {
+    const caminhoTexto = this.audioService.getTexto(this.capituloIndex);
+    if (caminhoTexto) {
+      fetch(caminhoTexto)
+        .then(response => response.text())
+        .then(text => {
+          this.texto = text.replace(/\n/g, '<br>');
+          this.textoExibido = this.textoExpandido ? this.texto : this.texto.substring(0, 20);
+        })
+        .catch(error => {
+          console.error('Erro ao carregar texto:', error);
+          this.texto = 'Erro ao carregar texto';
+          this.textoExibido = this.texto;
+        });
     } else {
-      this.texto = 'Capítulo não encontrado';
-      this.textoExibido = this.texto;
+      this.textoExibido = 'Texto não encontrado';
     }
   }
 
+
   alternarTextoExpandido(): void {
     this.textoExpandido = !this.textoExpandido;
-    if(this.textoExpandido) {
-      this.textoExibido = this.texto;
-    } else {
-      this.textoExibido = this.texto.substring(0, 100);
-    }
+    this.carregarTexto();
   }
+
+  resetEstado(): void {
+    this.textoExpandido = false;
+    this.carregarTexto();
+  }
+
 }

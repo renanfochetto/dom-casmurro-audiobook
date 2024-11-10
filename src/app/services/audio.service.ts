@@ -8487,10 +8487,10 @@ export class AudioService {
     return this.audios;
   }
 
-  getCapitulo(index: number): string | null {
+  getTexto(index: number): string | null {
     const audioData = this.audios[index];
     if (audioData) {
-      return audioData.capitulo;
+      return audioData.texto;
     }
     return null;
   }

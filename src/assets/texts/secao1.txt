@@ -1,34 +1,16 @@
-I
 
-Do titulo.
+<center><b>I
 
-Uma noite destas, vindo da cidade para o Engenho Novo, encontrei no
-trem da Central um rapaz aqui do bairro, que eu conheço de vista e
-de chapéo. Comprimentou-me, sentou-se ao pé de mim, falou da lua e
-dos ministros, e acabou recitando-me versos. A viagem era curta, e os
-versos póde ser que não fossem inteiramente maus. Succedeu, porém, que
-como eu estava cançado, fechei os olhos tres ou quatro vezes; tanto
-bastou para que elle interrompesse a leitura e mettesse os versos no
-bolso.
+Do titulo.</b></center>
+Uma noite destas, vindo da cidade para o Engenho Novo, encontrei no trem da Central um rapaz aqui do bairro, que eu conheço de vista e de chapéo. Comprimentou-me, sentou-se ao pé de mim, falou da lua e dos ministros, e acabou recitando-me versos. A viagem era curta, e os versos póde ser que não fossem inteiramente maus. Succedeu, porém, que como eu estava cançado, fechei os olhos tres ou quatro vezes; tanto bastou para que elle interrompesse a leitura e mettesse os versos no bolso.
 
---Continue, disse eu accordando.
+- Continue, disse eu accordando.
 
---Já acabei, murmurou elle.
+- Já acabei, murmurou elle.
 
---São muito bonitos.
+- São muito bonitos.
 
-Vi-lhe fazer um gesto para tiral-os outra vez do bolso, mas não passou
-do gesto; estava amuado. No dia seguinte entrou a dizer de mim nomes
-feios, e acabou alcunhando-me _Dom Casmurro._ Os visinhos, que não
-gostam dos meus habitos reclusos e calados, deram curso á alcunha, que
-afinal pegou. Nem por isso me zanguei. Contei a anecdota aos amigos da
-cidade, e elles, por graça, chamam-me assim, alguns em bilhetes: «Dom
-Casmurro, domingo vou jantar com você.»--«Vou para Petropolis, Dom
-Casmurro; a casa é a mesma da Rhenania; vê se deixas essa caverna do
-Engenho Novo, e vae lá passar uns quinze dias commigo.»--«Meu caro Dom
-Casmurro, não cuide que o dispenso do theatro amanhã; venha e dormirá
-aqui na cidade; dou-lhe camarote, dou-lhe chá, dou-lhe cama; só não lhe
-dou moça.»
+Vi-lhe fazer um gesto para tiral-os outra vez do bolso, mas não passou do gesto; estava amuado. No dia seguinte entrou a dizer de mim nomes feios, e acabou alcunhando-me _Dom Casmurro._ Os visinhos, que não gostam dos meus habitos reclusos e calados, deram curso á alcunha, que afinal pegou. Nem por isso me zanguei. Contei a anecdota aos amigos da cidade, e elles, por graça, chamam-me assim, alguns em bilhetes: «Dom Casmurro, domingo vou jantar com você.»--«Vou para Petropolis, Dom Casmurro; a casa é a mesma da Rhenania; vê se deixas essa caverna do Engenho Novo, e vae lá passar uns quinze dias commigo.»--«Meu caro Dom Casmurro, não cuide que o dispenso do theatro amanhã; venha e dormirá aqui na cidade; dou-lhe camarote, dou-lhe chá, dou-lhe cama; só não lhe dou moça.»
 
 Não consultes diccionarios. _Casmurro_ não está aqui no sentido que
 elles lhe dão, mas no que lhe poz o vulgo de homem calado e mettido
@@ -43,9 +25,9 @@ tanto.
 
 
 
-II.
+<center><b>II.
 
-Do livro.
+Do livro.</b></center>
 
 Agora que expliquei o titulo, passo a escrever o livro. Antes disso,
 porém, digamos os motivos que me põem a penna na mão.
@@ -120,9 +102,9 @@ do espirito. É o que vás entender, lendo.
 
 
 
-III
+<center><b>III
 
-A denuncia.
+A denuncia.</b></center>
 
 Ia a entrar na sala de visitas, quando ouvi proferir o meu nome e
 escondi-me atraz da porta. A casa era a da rua de Matacavallos, o mez
@@ -215,9 +197,9 @@ affecto, para cumprir um dever amargo, um dever amarissimo...»
 
 
 
-IV
+<center><b>IV
 
-Um dever amarissimo!
+Um dever amarissimo!</b></center>
 
 José Dias amava os superlativos. Era um modo de dar feição monumental
 ás ideias; não as havendo, servir a prolongar as phrases. Levantou-se
@@ -237,9 +219,9 @@ antes da conclusão. Um dever amarissimo!
 
 
 
-V
+<center><b>V
 
-O aggregado.
+O aggregado.</b></center>
 
 Nem sempre ia naquelle passo vagaroso e rigido. Tambem se descompunha
 em accionados, era muita vez rapido e lepido nos movimentos, tão
