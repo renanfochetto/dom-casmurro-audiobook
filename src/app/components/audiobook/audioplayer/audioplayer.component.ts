@@ -53,6 +53,8 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
   speeds: number[] = [0.5, 0.75, 1, 1.25, 1.5, 2]
   selectedSpeed: number = this.speeds[2];
 
+  private mouseDownOnSlider: boolean = false;
+
   constructor(private audioService: AudioService) {}
 
   ngOnInit(): void {
@@ -79,22 +81,31 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   public initializeAudio(): void {
+    console.log('Initializing audio');
     if(this.audioElement) {
       this.cleanupAudio();
     }
     if (this.audioIndex >= 0 && this.audioIndex < this.audioService.getAudios().length) {
       this.audioSrc = this.audioService.getAudios()[this.audioIndex].src;
       this.audioElement = new Audio(this.audioSrc);
+      console.log('Audio element:', this.audioElement);
       this.audioElement.preload = 'auto';
       this.audioElement.playbackRate = this.selectedSpeed;
+
       this.audioElement.onloadedmetadata = (): void => {
         if(this.audioElement.duration) {
         this.duration = this.audioElement.duration;
+          console.log('Audio duration:', this.duration);
       } else {
-          console.error('Error loading audio metadata');
+            console.error('Error loading audio metadata');
         }
       };
+
+      this.audioElement.onloadeddata = (): void => {
+        console.log('Loaded data', this.audioElement.readyState);
+      }
       this.audioElement.onplay = (): void => {
+        this.isPlaying = true;
         console.log('Playing');
       }
       this.audioElement.onended = (): void => {
@@ -102,6 +113,15 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
         this.audioTerminou.emit();
         this.nextChapter();
       };
+
+      this.audioElement.ontimeupdate = (): void => {
+        if(!this.mouseDownOnSlider) {
+          this.currentTime = this.audioElement.currentTime;
+          this.updateProgress();
+        }
+      };
+
+      this.duracaoCapitulo.emit(this.duration);
     }
   }
 
@@ -114,18 +134,22 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   togglePlayPause(): void {
-    if (this.isPlaying) {
+    console.log('Toggling play/pause');
+    if (this.audioElement.readyState < 2) {
+      console.log('Audio not ready');
+      return;
+    }
+    if(this.isPlaying) {
       this.audioElement.pause();
+      this.isPlaying = false;
     } else {
-      this.audioElement.play().catch((error) => {
-        console.error('Error playing audio:', error);
+      this.audioElement.play().then(() => {
+        console.log('Audio playing');
+        this.isPlaying = true;
+      }).catch((error) => {
+        console.error('Error playing audio');
       });
     }
-    this.isPlaying = !this.isPlaying;
-  }
-
-  skip(seconds: number) {
-    this.audioElement.currentTime += seconds;
   }
 
   nextChapter(): void {
@@ -204,12 +228,17 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
     console.log(clickPosition, clampedPosition, newTime);
 
     this.audioElement.currentTime = newTime;
-    requestAnimationFrame(() => {
-      this.currentTime = this.audioElement.currentTime;
+    this.currentTime = this.audioElement.currentTime;
+    this.updateProgress()
+    this.progressWidth = `${(this.currentTime / this.duration) * 100}%`;
+    console.log(`[Seek] Atualizado currentTime: ${this.currentTime.toFixed(2)}s`);
+    console.log(`[Seek] Barra de progresso: ${this.progressWidth}`);
+  }
+
+  updateProgress(): void {
+    if (this.audioElement && this.duration > 0) {
       this.progressWidth = `${(this.currentTime / this.duration) * 100}%`;
-      console.log(`[Seek] Atualizado currentTime: ${this.currentTime.toFixed(2)}s`);
-      console.log(`[Seek] Barra de progresso: ${this.progressWidth}`);
-    });
+    }
   }
 
   formatTime(time: number): string {
