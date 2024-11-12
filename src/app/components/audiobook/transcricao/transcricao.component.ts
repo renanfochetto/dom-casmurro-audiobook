@@ -34,7 +34,13 @@ export class TranscricaoComponent implements OnInit, OnChanges {
       fetch(caminhoTexto)
         .then(response => response.text())
         .then(text => {
-          this.texto = text.replace(/\n/g, '<br>');
+          this.texto = text
+            .replace(/<center>/g, '<br><br><br><center>')
+            .replace(/<\/center>/g, '</center><br>')
+            .replace(/--/g, '<br><br>-')
+            .replace(/\n{2,}/g, '<br>')
+            .replace(/\n/g, ' ');
+          console.log('Texto carregado:', this.texto);
           this.textoExibido = this.textoExpandido ? this.texto : this.texto.substring(0, 20);
         })
         .catch(error => {

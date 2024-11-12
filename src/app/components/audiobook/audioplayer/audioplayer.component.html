@@ -3,9 +3,17 @@
   <div class="audio-progress-container">
     <!-- Tempo atual -->
     <span class="current-time">{{ formatTime(currentTime) }}</span>
-    <div class="audio-progress" (click)="seek($event)">
-      <div class="audio-progress-bar" [style.width]="progressWidth"></div>
-    </div>
+    <input
+      type="range"
+      class="audio-progress"
+      [value]="(currentTime / duration) * 100"
+      min="0"
+      max="100"
+      step="0.1"
+      (input)="seek($event)"
+      (mousedown)="onMouseDown()"
+      (mouseup)="onMouseUp()"
+    >
     <!-- Tempo total -->
     <span class="total-time">{{ formatTime(duration) }}</span>
   </div>

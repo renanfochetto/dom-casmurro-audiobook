@@ -49,7 +49,6 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
   isVolumeControlVisible: boolean = false;
   isSpeedControlVisible: boolean = false;
 
-
   speeds: number[] = [0.5, 0.75, 1, 1.25, 1.5, 2]
   selectedSpeed: number = this.speeds[2];
 
@@ -100,7 +99,6 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
             console.error('Error loading audio metadata');
         }
       };
-
       this.audioElement.onloadeddata = (): void => {
         console.log('Loaded data', this.audioElement.readyState);
       }
@@ -110,6 +108,7 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
       }
       this.audioElement.onended = (): void => {
         console.log('Ended');
+        this.resetPlayer();
         this.audioTerminou.emit();
         this.nextChapter();
       };
@@ -117,6 +116,12 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
       this.audioElement.ontimeupdate = (): void => {
         if(!this.mouseDownOnSlider) {
           this.currentTime = this.audioElement.currentTime;
+          if(this.currentTime >= this.audioElement.duration) {
+            this.currentTime = this.audioElement.duration;
+            this.audioElement.pause();
+            this.audioTerminou.emit();
+            this.nextChapter();
+          }
           this.updateProgress();
         }
       };
@@ -180,7 +185,7 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
 
   resetPlayer(): void {
     this.currentTime = 0;
-    this.progressWidth = '0%';
+    this.progressWidth = '0';
     this.isPlaying = false;
     if (this.audioElement) {
       this.audioElement.pause();
@@ -220,24 +225,31 @@ export class AudioplayerComponent implements OnInit, OnDestroy, OnChanges {
     }
   }
 
-  seek(event: MouseEvent) {
-    const progressBar = (event.target as HTMLElement).getBoundingClientRect();
-    const clickPosition = event.clientX - progressBar.left;
-    const clampedPosition = Math.max(0, Math.min(clickPosition, progressBar.width));
-    const newTime = (clampedPosition / progressBar.width) * this.audioElement.duration;
-    console.log(clickPosition, clampedPosition, newTime);
+  seek(event: Event) {
+    const input = event.target as HTMLInputElement;
+    let newTime = (parseFloat(input.value) / 100) * this.audioElement.duration;
+
+    newTime = Math.min(newTime, this.audioElement.duration);
 
     this.audioElement.currentTime = newTime;
     this.currentTime = this.audioElement.currentTime;
     this.updateProgress()
-    this.progressWidth = `${(this.currentTime / this.duration) * 100}%`;
+
     console.log(`[Seek] Atualizado currentTime: ${this.currentTime.toFixed(2)}s`);
     console.log(`[Seek] Barra de progresso: ${this.progressWidth}`);
   }
 
+  onMouseDown(): void {
+    this.mouseDownOnSlider = true;
+  }
+
+  onMouseUp(): void {
+    this.mouseDownOnSlider = false;
+  }
+
   updateProgress(): void {
     if (this.audioElement && this.duration > 0) {
-      this.progressWidth = `${(this.currentTime / this.duration) * 100}%`;
+      this.progressWidth = `${Math.min((this.currentTime / this.duration) * 100, 100)}%`;
     }
   }
 
