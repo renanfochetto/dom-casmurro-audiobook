@@ -34,3 +34,63 @@ section h4 {
 section h4 span {
   color: #8e3b46;
 }
+
+@media (max-width: 1023px) {
+  section {
+    margin: 0.5rem auto;
+  }
+
+  section h1 {
+    font-size: 1.5rem;
+  }
+
+  section h2 {
+    font-size: 1rem;
+  }
+
+  section h3 {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+
+  section h4 {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  section {
+    margin-bottom: 6rem;
+  }
+
+  section h1 {
+    font-size: 1.4rem;
+    margin: 1.2rem 0;
+  }
+
+}
+
+@media (max-width: 479px) {
+  section {
+    width: 80%;
+    margin: 0.5rem auto;
+  }
+
+  section h1 {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+
+  section h2 {
+    font-size: 0.9rem;
+  }
+
+  section h3 {
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+  }
+
+  section h4 {
+    font-size: 0.7rem;
+  }
+}

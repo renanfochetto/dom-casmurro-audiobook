@@ -31,5 +31,52 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 1023px) {
+  .introducao {
+    margin: 1.2rem auto;
+    padding-top: 2rem;
+  }
+
+  .introducao h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .introducao p {
+    font-size: 0.85rem;
+  }
+
+  .introducao span {
+    font-size: 0.85rem;
+  }
+
+  .introducao span a {
+    font-size: 0.85rem;
+  }
+
+}
+
+@media (max-width: 479px) {
+  .introducao {
+    width: 80%;
+  }
+
+  .introducao h3 {
+    font-size: 1.4rem;
+  }
+
+  .introducao p {
+    font-size: 0.8rem;
+  }
+
+  .introducao span {
+    font-size: 0.8rem;
+  }
+
+  .introducao span a {
+    font-size: 0.8rem;
+  }
+
+}
 
 

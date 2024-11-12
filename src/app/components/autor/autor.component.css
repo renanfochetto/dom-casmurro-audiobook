@@ -25,6 +25,7 @@
 .introducao-topo {
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin-bottom: 2.5rem;
 }
 
@@ -84,3 +85,94 @@ blockquote {
   font-size: 1.8rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 1023px) {
+  .introducao {
+    padding: 0.4rem 0;
+  }
+
+  .introducao-topo {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .introducao img {
+    width: 12rem;
+    height: 16.5rem;
+  }
+
+  .introducao-topo-texto {
+    margin-left: 0;
+  }
+
+  .introducao-topo-texto h3 {
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: 767px) {
+
+    blockquote {
+      margin-left: 2.5rem;
+    }
+
+    .introducao span {
+      margin-left: 1rem;
+    }
+
+  }
+}
+
+@media (max-width: 479px) {
+  .introducao {
+    width: 80%;
+    padding: 1.2rem 0;
+  }
+
+  .introducao-topo {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .introducao img {
+    width: 10rem;
+    height: 14rem;
+  }
+
+  .introducao-topo-texto {
+    margin-left: 0;
+  }
+
+  .introducao-topo-texto h3 {
+    font-size: 1.4rem;
+  }
+
+  .introducao span {
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+
+  .introducao h4 {
+    font-size: 1rem;
+  }
+
+  .introducao p {
+    font-size: 0.9rem;
+  }
+
+  .introducao span a {
+    padding-left: 0.2rem;
+  }
+
+  blockquote {
+    margin-left: 1.5rem;
+  }
+
+  p:last-child{
+    margin-bottom: 1.5rem;
+  }
+}
+

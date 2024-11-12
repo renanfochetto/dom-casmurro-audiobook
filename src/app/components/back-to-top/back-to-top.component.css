@@ -28,3 +28,29 @@
   background-color: #8e3b46;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 1023px) {
+  .back-to-top {
+    top: 3rem;
+    right: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .back-to-top {
+    top: 2rem;
+    right: 2rem;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .back-to-top img {
+    width: 1rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .back-to-top {
+    right: 1rem;
+  }
+}

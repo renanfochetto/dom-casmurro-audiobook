@@ -37,3 +37,48 @@
 .menu-hamburger ul li a:hover {
   color: #2c3e50;
 }
+
+@media (max-width: 1023px) {
+  .menu-hamburger.aberto {
+    top: 0rem;
+    right: 1rem;
+  }
+
+  .menu-hamburger ul {
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .menu-hamburger ul li a {
+    font-size: 0.85rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .menu-hamburger {
+    top: 0.6rem;
+    right: -500px;
+  }
+
+  .menu-hamburger ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-hamburger.aberto {
+    top: 0.6rem;
+  }
+
+}
+
+@media (max-width: 479px) {
+
+
+  .menu-hamburger ul li a {
+    font-size: 0.7rem;
+  }
+}

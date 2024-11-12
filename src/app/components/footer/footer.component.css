@@ -24,3 +24,15 @@ footer {
 .logo-github:hover {
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
 }
+
+@media (max-width: 1023px) {
+  .logo-autor {
+    width: 3.4rem;
+    height: 1.4rem;
+  }
+
+  .logo-github {
+    width: 1.4rem;
+  }
+}
+

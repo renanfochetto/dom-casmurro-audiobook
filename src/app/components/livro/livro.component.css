@@ -53,3 +53,66 @@ blockquote {
   font-size: 1rem;
   color: #8e3b46;
 }
+
+@media (max-width: 1023px) {
+  .introducao {
+    padding: 1rem 0;
+  }
+
+  .introducao h4 {
+    margin: 2.5rem 0 0.6rem 0;
+  }
+
+  .introducao h6 {
+    margin: 2rem 0 0 0;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .introducao span {
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+
+  .introducao span a {
+    font-size: 0.9rem;
+    margin-left: 0.2rem;
+  }
+
+}
+
+@media (max-width: 479px) {
+  .introducao {
+    width: 80%;
+    padding: 1rem;
+  }
+
+  .introducao h3 {
+    font-size: 1.6rem;
+  }
+
+  .introducao h4 {
+    font-size: 1rem;
+    margin: 2rem 0 0.6rem 0;
+  }
+
+  .introducao h6 {
+    font-size: 0.9rem;
+    margin: 1.5rem 0 0 0;
+  }
+
+  .introducao span {
+    font-size: 0.9rem;
+    margin-left: 1rem;
+  }
+
+  .introducao span a {
+    font-size: 0.8rem;
+    margin-left: 0.2rem;
+  }
+
+  blockquote {
+    margin-left: 2.5rem;
+  }
+}

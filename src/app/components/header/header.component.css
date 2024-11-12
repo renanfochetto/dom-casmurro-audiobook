@@ -73,3 +73,31 @@
   transition: all 0.3s ease;
 }
 
+@media (max-width: 1023px) {
+  .cabecalho {
+    padding: 0.8rem;
+  }
+
+  .container-logo h1 {
+    font-size: 1rem;
+  }
+
+  .icone-home img {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .icone-menu {
+    top: 1rem;
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .icone-menu {
+    flex-direction: row;
+  }
+}
+
+
