@@ -22,7 +22,7 @@
   <!--Lista de Capítulos-->
   <div class="capitulos">
     <h4 id="menu-titulo">Menu de Seções</h4>
-    <ul>
+    <ul role="list" aria-label="menu-titulo">
       <li *ngFor="let capitulo of capitulos; let i = index"
           (click)="selectChapter(i)"
           role="menuitem"
