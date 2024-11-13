@@ -1,8 +1,10 @@
 <div class="audio-player">
+
   <!-- Barra de progresso -->
   <div class="audio-progress-container">
+
     <!-- Tempo atual -->
-    <span class="current-time">{{ formatTime(currentTime) }}</span>
+    <span class="current-time" aria-live="polite">{{ formatTime(currentTime) }}</span>
     <input
       type="range"
       class="audio-progress"
@@ -13,39 +15,50 @@
       (input)="seek($event)"
       (mousedown)="onMouseDown()"
       (mouseup)="onMouseUp()"
+      aria-label="Progresso do áudio"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [attr.aria-valuenow]="(currentTime / duration) * 100"
     >
+
     <!-- Tempo total -->
     <span class="total-time">{{ formatTime(duration) }}</span>
   </div>
+
   <!-- Controles principais -->
   <div class="audio-controls">
+
     <!-- Botão Anterior -->
-    <button class="prev-btn" (click)="previousChapter()" [disabled]="isPreviousDisabled">
+    <button class="prev-btn" (click)="previousChapter()" [disabled]="isPreviousDisabled" aria-label="Capítulo anterior">
       <img src="assets/icons/previous.svg" alt="Anterior" />
     </button>
+
     <!-- Botão Play/Pause -->
-    <button class="play-pause-btn" (click)="togglePlayPause()">
+    <button class="play-pause-btn" (click)="togglePlayPause()" [attr.aria-label]="isPlaying ? 'Pausar' : 'Reproduzir'">
       <img *ngIf="isPlaying" src="assets/icons/pause.svg" alt="Pausar" />
       <img *ngIf="!isPlaying" src="assets/icons/play.svg" alt="Reproduzir" />
     </button>
+
     <!-- Botão Próximo -->
-    <button class="next-btn" (click)="nextChapter()" [disabled]="isNextDisabled">
+    <button class="next-btn" (click)="nextChapter()" [disabled]="isNextDisabled" aria-label="Próximo capítulo">
       <img src="assets/icons/next.svg" alt="Próximo" />
     </button>
+
     <!-- Controles de Velocidade -->
     <div class="speed-controls">
-      <select (change)="changeSpeed($event)" [(ngModel)]="selectedSpeed">
+      <select (change)="changeSpeed($event)" [(ngModel)]="selectedSpeed" aria-label="Controle de velocidade">
         <option *ngFor="let speed of speeds" [value]="speed">{{ speed }}x</option>
       </select>
     </div>
+
     <!-- Controles de Volume -->
     <div class="volume-controls">
-      <button (click)="toggleVolumeControl()">
+      <button (click)="toggleVolumeControl()" aria-label="Alternar controle de volume">
         <img *ngIf="volume > 0" src="assets/icons/volume.svg" alt="Volume">
-        <img *ngIf="volume === 0" src="assets/icons/mute.svg" alt="Mute">
+        <img *ngIf="volume === 0" src="assets/icons/mute.svg" alt="Silenciar">
       </button>
       <div class="volume-bar" *ngIf="isVolumeControlVisible">
-        <input type="range" [(ngModel)]="volume" min="0" max="1" step="0.01" (input)="adjustVolume()">
+        <input type="range" [(ngModel)]="volume" min="0" max="1" step="0.01" (input)="adjustVolume()" aria-label="Ajuste de volume">
       </div>
     </div>
   </div>

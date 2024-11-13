@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { RouterLink } from "@angular/router";
-import {NgClass, NgIf} from "@angular/common";
-import {MenuComponent} from "./menu/menu.component";
+import { NgClass, NgIf } from "@angular/common";
+import { MenuComponent } from "./menu/menu.component";
 
 @Component({
   selector: 'app-header',
@@ -14,11 +14,25 @@ import {MenuComponent} from "./menu/menu.component";
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewChecked, AfterViewInit {
   menuAberto: boolean = false;
+
+  @ViewChild('primeiroLink') primeiroLink!: ElementRef<HTMLAnchorElement>;
+  @ViewChild('iconeMenu') iconeMenu!: ElementRef;
 
   alternarMenu() {
     this.menuAberto = !this.menuAberto;
   }
 
+  ngAfterViewInit() {
+    if(this.menuAberto && this.primeiroLink) {
+      this.primeiroLink.nativeElement.focus();
+    }
+  }
+
+  ngAfterViewChecked() {
+    if (this.menuAberto && this.primeiroLink) {
+        this.primeiroLink?.nativeElement.focus();
+    }
+  }
 }

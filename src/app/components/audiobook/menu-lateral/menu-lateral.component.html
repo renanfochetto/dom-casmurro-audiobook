@@ -1,16 +1,34 @@
 <!-- Botão que abre e fecha o menu lateral -->
-<button class="menu-toggle" [ngClass]="{'menu-visible': isMenuVisible}" (click)="toggleMenu()">
-  <span *ngIf="!isMenuVisible"><img src="/assets/icons/fast-forward.svg" alt=""></span>
-  <span *ngIf="isMenuVisible"><img src="/assets/icons/close.svg" alt=""></span>
+<button
+  class="menu-toggle"
+  [ngClass]="{'menu-visible': isMenuVisible}"
+  (click)="toggleMenu()"
+  aria-label="Alternar menu lateral"
+  [attr.aria-expanded]="isMenuVisible"
+  aria-controls="menu-lateral"
+>
+
+  <span *ngIf="!isMenuVisible">
+    <img src="/assets/icons/fast-forward.svg" alt="Abrir menu lateral">
+  </span>
+  <span *ngIf="isMenuVisible">
+    <img src="/assets/icons/close.svg" alt="Fechar menu lateral">
+  </span>
 </button>
 
 <!-- Menu lateral com lista de capítulos -->
-<div class="menu-lateral" [ngClass]="{'menu-visible': isMenuVisible}">
+<div class="menu-lateral" [ngClass]="{'menu-visible': isMenuVisible}" role="navigation" aria-label="Menu de seções">
+
   <!--Lista de Capítulos-->
   <div class="capitulos">
-    <h4>Menu de Seções</h4>
+    <h4 id="menu-titulo">Menu de Seções</h4>
     <ul>
-      <li *ngFor="let capitulo of capitulos; let i = index" (click)="selectChapter(i)">
+      <li *ngFor="let capitulo of capitulos; let i = index"
+          (click)="selectChapter(i)"
+          role="menuitem"
+          tabindex="0"
+          aria-labelledby="menu-titulo"
+      >
         <span class="capitulos-info">
           <span class="titulo">{{ capitulo.titulo }}</span>
           <span class="subtitulo">{{ capitulo.subtitulo }}</span>

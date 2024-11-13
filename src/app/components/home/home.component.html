@@ -1,10 +1,11 @@
-<section class="pagina-principal">
-  <img class="pagina-principal-imagem" src="/assets/domcasmurro-capa.jpg" alt="Imagem de Machado de Assis">
-  <h2>Dom Casmurro</h2>
+<section class="pagina-principal" role="region" aria-labelledby="secao-titulo">
+  <!--Conteúdo da Seção-->
+  <img class="pagina-principal-imagem" src="/assets/domcasmurro-capa.jpg" alt="Imagem gerada por Inteligência Artificial do personagem Bentinho, protagonista de Dom Casmurro, em estilo ilustrativo.">
+  <h2 id="secao-titulo">Dom Casmurro</h2>
   <p>Explore o universo deste clássico da literatura brasileira, escrito por Machado de Assis.</p>
   <p>Ouça agora o audiobook completo de Dom Casmurro.</p>
-  <button [routerLink]="['/audiobook']"  routerLinkActive="active">
-    <img class="headphones-icon" src="/assets/icons/headphones.svg" alt="Ícone de Fone de Ouvido">
+  <button [routerLink]="['/audiobook']"  routerLinkActive="active" aria-label="Ouvir o audiobook de Dom Casmurro" autofocus>
+    <img class="headphones-icon" src="/assets/icons/headphones.svg" alt="Ícone representando fones de ouvido, indicando ação de ouvir o audiobook">
     Ouvir Agora
   </button>
 </section>

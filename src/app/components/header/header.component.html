@@ -1,19 +1,25 @@
   <header class="cabecalho">
     <div class="container-logo">
-      <a href="/">
+      <a href="/" aria-label="Ir para a página inicial">
         <h1>Dom Casmurro</h1>
       </a>
     </div>
+
     <div class="container-botoes">
+      <!-- Ícone de Home -->
       <div class="icone-home">
-        <a href="/">
+        <a href="/" aria-label="Ir para a página Inicial">
           <img src="/assets/icons/home.svg" alt="Ícone de uma Casa">
         </a>
       </div>
-      <div class="icone-menu" (click)="alternarMenu()">
+
+      <!-- Ícone do Menu (Hamburguer) -->
+      <div class="icone-menu" (click)="alternarMenu()" role="button" [attr.aria-expanded]="menuAberto ? 'true' : 'false'" [attr.aria-label]="menuAberto ? 'Fechar menu de navegação' : 'Abrir menu de navegação'">
         <img class="icone-menu-acao" *ngIf="!menuAberto" src="/assets/icons/menu.svg" alt="Ícone Menu de Opções">
-        <img class="icone-menu-acao" *ngIf="menuAberto" src="/assets/icons/close-menu.svg" alt="Ícone de Fechar">
+        <img class="icone-menu-acao" *ngIf="menuAberto" src="/assets/icons/close-menu.svg" alt="Ícone de Fechar Menu">
       </div>
-    <app-menu [menuAberto]="menuAberto" (fecharMenu)="menuAberto = false"></app-menu>
+
+      <!-- Componente do Menu -->
+      <app-menu [menuAberto]="menuAberto" (fecharMenu)="menuAberto = false" role="navigation" aria-label="Menu de navegação"></app-menu>
     </div>
   </header>

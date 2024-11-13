@@ -1,8 +1,23 @@
 <div class="transcricao">
-  <p *ngIf="textoExpandido" [innerHTML]="textoExibido" style="text-align: justify"></p>
+
+  <!-- Transcrição do capítulo -->
+  <p *ngIf="textoExpandido" [innerHTML]="textoExibido" style="text-align: justify" role="region" aria-live="polite"></p>
+
 </div>
+
 <!-- Botões de alternância -->
 <div class="botao-container">
-  <button *ngIf="!textoExpandido" (click)="alternarTextoExpandido()">Ler a Seção<img src="/assets/icons/book.svg" class="image-book" alt="Ícone de Ver Mais"></button>
-  <button *ngIf="textoExpandido" (click)="alternarTextoExpandido()" class="button-close">Fechar<img src="/assets/icons/close-text.svg" class="image-close" alt="Ícone de Recolher"></button>
+
+  <!-- Botão para expandir o texto -->
+  <button *ngIf="!textoExpandido" (click)="alternarTextoExpandido()" aria-label="Expandir transcrição para ler a seção">
+    Ler a Seção
+    <img src="/assets/icons/book.svg" class="image-book" alt="Ícone de Ver Mais">
+  </button>
+
+  <!-- Botão para recolher o texto -->
+  <button *ngIf="textoExpandido" (click)="alternarTextoExpandido()" class="button-close" aria-label="Fechar transcrição e voltar">
+    Fechar
+    <img src="/assets/icons/close-text.svg" class="image-close" alt="Ícone de Recolher Transcrição">
+  </button>
+
 </div>

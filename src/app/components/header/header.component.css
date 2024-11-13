@@ -32,6 +32,7 @@
 }
 
 .icone-home img {
+  border: none;
   color: white;
   width: 1.5rem;
   height: 1.5rem;

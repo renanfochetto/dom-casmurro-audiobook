@@ -1,7 +1,7 @@
-<nav class="menu-hamburger" [class.aberto]="menuAberto">
+<nav class="menu-hamburger" [class.aberto]="menuAberto" role="navigation" aria-label="Menu de navegação principal">
   <ul>
-    <li><a routerLink="/autor" routerLinkActive="active" (click)="onLinkClick()">Sobre o Autor</a></li>
-    <li><a routerLink="/livro" routerLinkActive="active" (click)="onLinkClick()">Detalhes do Livro</a></li>
-    <li><a routerLink="/info-audiobook" routerLinkActive="active" (click)="onLinkClick()">O AudioBook</a></li>
+    <li><a #primeiroLink routerLink="/autor" routerLinkActive="active" (click)="onLinkClick()" aria-label="Ir para a página Sobre o Autor">Sobre o Autor</a></li>
+    <li><a routerLink="/livro" routerLinkActive="active" (click)="onLinkClick()" aria-label="Ir para a página Detalhes do Livro">Detalhes do Livro</a></li>
+    <li><a routerLink="/info-audiobook" routerLinkActive="active" (click)="onLinkClick()" aria-label="Ir para a página O Audiobook">O AudioBook</a></li>
   </ul>
 </nav>
