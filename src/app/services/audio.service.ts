@@ -8495,19 +8495,5 @@ export class AudioService {
     return null;
   }
 
-  getNextAudio (numeroSecao: number): AudioData | null {
-    if(numeroSecao < this.audios.length) {
-      return this.audios[numeroSecao + 1];
-    }
-    return null;
-  }
-
-  getPreviousAudio (numeroSecao: number): AudioData | null {
-    if(numeroSecao > 0) {
-      return this.audios[numeroSecao - 1];
-    }
-    return null;
-  }
-
   constructor() { }
 }

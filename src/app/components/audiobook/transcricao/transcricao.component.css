@@ -3,6 +3,16 @@
   justify-content: center;
   position: relative;
   margin: 0.8rem auto;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .transcricao p {
@@ -20,7 +30,7 @@
 
 button {
   font-family: "Roboto", sans-serif;
-  color: #2c3e50;
+  color: var(--secondary-color);
   font-size: 0.85rem;
   display: flex;
   font-weight: 600;
@@ -30,18 +40,23 @@ button {
   align-items: center;
   z-index: 2;
   border: none;
-  background-color: #f1e3d3;
+  background-color: var(--background-color);
   cursor: pointer;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: text-shadow 0.2s ease, transform 0.2s ease;
 }
 
 button:hover {
-  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.35);
 }
 
 .button-close {
   display: flex;
   gap: 0.8rem;
+}
+
+.button-close:active, .button-open:active {
+  transform: scale(0.9);
 }
 
 .image-book {
@@ -82,7 +97,6 @@ button:hover {
 }
 
 @media (max-width: 767px) {
-
   .transcricao {
     width: 65%;
   }

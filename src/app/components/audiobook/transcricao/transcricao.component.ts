@@ -5,7 +5,7 @@ import { CommonModule } from "@angular/common";
 @Component({
   selector: 'app-transcricao',
   standalone: true,
-  imports: [CommonModule],
+  imports: [ CommonModule ],
   templateUrl: './transcricao.component.html',
   styleUrl: './transcricao.component.css'
 })

@@ -6,7 +6,17 @@ section {
   width: 60%;
   margin: 1rem auto;
   font-family: "Lora", serif;
-  color: #2c3e50;
+  color: var(--secondary-color);
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 section h1 {
@@ -14,7 +24,7 @@ section h1 {
   margin: 1.4rem 0 1.6rem 0;
   font-size: 1.8rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  color: #8e3b46;
+  color: var(--primary-color);
 }
 
 section h2 {
@@ -32,7 +42,7 @@ section h4 {
 }
 
 section h4 span {
-  color: #8e3b46;
+  color: var(--primary-color);
 }
 
 @media (max-width: 1023px) {

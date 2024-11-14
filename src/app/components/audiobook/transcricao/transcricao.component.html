@@ -1,7 +1,7 @@
 <div class="transcricao">
 
   <!-- Transcrição do capítulo -->
-  <p *ngIf="textoExpandido" [innerHTML]="textoExibido" style="text-align: justify" role="region" aria-live="polite"></p>
+  <p *ngIf="textoExpandido" [@expandirContrair] [innerHTML]="textoExibido" style="text-align: justify" role="region" aria-live="polite"></p>
 
 </div>
 
@@ -9,7 +9,7 @@
 <div class="botao-container">
 
   <!-- Botão para expandir o texto -->
-  <button *ngIf="!textoExpandido" (click)="alternarTextoExpandido()" aria-label="Expandir transcrição para ler a seção">
+  <button *ngIf="!textoExpandido" (click)="alternarTextoExpandido()" class="button-open" aria-label="Expandir transcrição para ler a seção">
     Ler a Seção
     <img src="/assets/icons/book.svg" class="image-book" alt="Ícone de Ver Mais">
   </button>

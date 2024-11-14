@@ -5,7 +5,7 @@
   top: 12px;
   right: -250px;
   background-color: rgba(0, 0, 0, 0);
-  transition: right 0.3s ease;
+  transition: right 0.5s ease;
   display: flex;
   flex-direction: column;
   margin-top: 3rem;
@@ -13,6 +13,11 @@
 
 .menu-hamburger.aberto {
   right: 2rem;
+}
+
+.menu-hamburger:not(.aberto) {
+  right: -250px; /* Mover para fora da tela */
+  transition: right 1s ease; /* Suavizar o fechamento */
 }
 
 .menu-hamburger ul {
@@ -32,10 +37,20 @@
   font-weight: 500;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   font-family: "Roboto", sans-serif;
+  transition: text-shadow 0.3s ease;
 }
 
 .menu-hamburger ul li a:hover {
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.35);
   color: #2c3e50;
+}
+
+.menu-hamburger ul li:active {
+  transform: scale(1.1);
+}
+
+.menu-hamburger ul li {
+  transition: transform 0.3s ease;
 }
 
 @media (max-width: 1023px) {

@@ -1,12 +1,23 @@
 .introducao {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
   font-family: "Lora", serif;
   line-height: 1.4rem;
   margin: 1.5rem auto;
   flex-direction: column;
-  color: #2c3e50;
+  color: var(--secondary-color);
   padding-bottom: 5.5rem;
   width: 60%;
   text-align: justify;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .introducao h3 {
@@ -21,14 +32,18 @@
   margin-top: 2rem;
   font-weight: 600;
   font-size: 1.1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .introducao a {
   padding-left: 0.5rem;
   font-weight: 600;
-  color: #8e3b46;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: var(--primary-color);
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.introducao a:hover {
+  text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 1023px) {

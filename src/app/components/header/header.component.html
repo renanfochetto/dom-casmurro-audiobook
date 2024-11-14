@@ -1,6 +1,6 @@
   <header class="cabecalho">
     <div class="container-logo">
-      <a href="/" aria-label="Ir para a página inicial">
+      <a href="/" aria-label="Ir para a página inicial" class="container-logo-link">
         <h1>Dom Casmurro</h1>
       </a>
     </div>
@@ -14,7 +14,14 @@
       </div>
 
       <!-- Ícone do Menu (Hamburguer) -->
-      <div class="icone-menu" (click)="alternarMenu()" role="button" [attr.aria-expanded]="menuAberto ? 'true' : 'false'" [attr.aria-label]="menuAberto ? 'Fechar menu de navegação' : 'Abrir menu de navegação'">
+      <div
+        class="icone-menu"
+        (click)="alternarMenu()"
+        role="button"
+        [attr.aria-expanded]="menuAberto ? 'true' : 'false'"
+        [attr.aria-label]="menuAberto ? 'Fechar menu de navegação' : 'Abrir menu de navegação'"
+        [ngClass]="{'menu-aberto': menuAberto}"
+      >
         <img class="icone-menu-acao" *ngIf="!menuAberto" src="/assets/icons/menu.svg" alt="Ícone Menu de Opções">
         <img class="icone-menu-acao" *ngIf="menuAberto" src="/assets/icons/close-menu.svg" alt="Ícone de Fechar Menu">
       </div>

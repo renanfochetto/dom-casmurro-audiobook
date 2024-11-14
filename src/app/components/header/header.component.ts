@@ -9,7 +9,8 @@ import { MenuComponent } from "./menu/menu.component";
   imports: [
     RouterLink,
     MenuComponent,
-    NgIf
+    NgIf,
+    NgClass
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
