@@ -1,27 +1,65 @@
-# DomCasmurroAudiobook
+# 📚 Audiobook Dom Casmurro - Machado de Assis 🎧
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.10.
+Este projeto é uma aplicação web desenvolvida para a reprodução do audiobook de Dom Casmurro, uma obra clássica de Machado de Assis. O objetivo é proporcionar uma experiência de leitura auditiva imersiva e acessível do romance, com controles fáceis de navegação, pausas e retomada do progresso, ideal para quem prefere ouvir livros enquanto realiza outras atividades.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📖 Sobre o Livro
 
-## Code scaffolding
+Dom Casmurro é um dos maiores clássicos da literatura brasileira. Publicado originalmente em 1900, o romance narra a história de Bentinho, um homem que, em sua velhice, reflete sobre sua juventude, seu amor por Capitu e a dúvida sobre a fidelidade de sua esposa.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+A narrativa é rica em temas como ciúmes, traição e o conflito entre razão e emoção, sendo frequentemente estudada nas escolas brasileiras. Com esta versão em audiobook, buscamos oferecer uma nova forma de vivenciar essa obra literária, permitindo que os leitores ouçam as palavras de Machado de Assis em qualquer lugar, a qualquer hora.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ✨ Funcionalidades
 
-## Running unit tests
+🎧 Reprodução de Áudio: Escute o livro Dom Casmurro com controle completo sobre a reprodução — play, pausa, retroceder, avançar e aumentar a velocidade de leitura.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+📖 Transcrição do Livro Original: Acompanhe a leitura com a transcrição do texto original, permitindo que você leia junto ou siga a narração.
 
-## Running end-to-end tests
+🎛️ Interface Simples e Intuitiva: Controles fáceis de usar para garantir que a experiência de audição seja fluída e agradável.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+♿ Acessibilidade: Design e controles pensados para tornar o acesso ao conteúdo mais fácil para todos os usuários.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 🔗 Fontes
+
+Os áudios do livro Dom Casmurro foram obtidos do site LibriVox, uma biblioteca digital de audiobooks gratuitos, narrados por voluntários.
+
+🔗 LibriVox - Dom Casmurro
+
+O Texto do livro Dom Casmurro foi obtido pelo Projeto Gutenberg, uma biblioteca digital de livros gratuitos.
+
+🔗 Projeto Gutenberg - Dom Casmurro
+
+
+## ⚙️ Tecnologias Utilizadas
+
+![Angular](https://img.shields.io/badge/Angular-%E2%9C%94-brightgreen?logo=angular&logoColor=white&style=flat-square)
+![TypeScript](https://img.shields.io/badge/TypeScript-%E2%9C%94-3178C6?logo=typescript&logoColor=white&style=flat-square)
+![HTML5](https://img.shields.io/badge/HTML5-%E2%9C%94-E34F26?logo=html5&logoColor=white&style=flat-square)
+![EsLint](https://img.shields.io/badge/EsLint-%E2%9C%94-4B32C3?logo=eslint&logoColor=white&style=flat-square)
+
+
+## 🚀 Contribuindo
+
+Este projeto é de código aberto e você pode contribuir! Se deseja melhorar a aplicação ou adicionar novos recursos, siga os passos abaixo:
+
+🍴 Faça um fork deste repositório.
+
+🌱 Crie uma branch para sua funcionalidade (git checkout -b minha-nova-funcionalidade).
+
+✏️ Realize as modificações e faça commits significativos.
+
+🔄 Envie as alterações para o repositório original com um pull request.
+
+
+
+## 👨‍💻 Autores
+
+Renan Fochetto - Desenvolvedor principal - GitHub
+
+
+## 🙏 Agradecimentos
+
+Agradecemos a todos que contribuíram para o desenvolvimento deste projeto! Caso tenha sugestões ou dúvidas, sinta-se à vontade para abrir uma issue ou pull request.
+
