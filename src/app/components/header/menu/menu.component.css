@@ -92,6 +92,9 @@
 
 @media (max-width: 479px) {
 
+  .menu-hamburger {
+    right: -800px;
+  }
 
   .menu-hamburger ul li a {
     font-size: 0.7rem;
