@@ -21,6 +21,7 @@
 .pagina-principal p {
   margin: 0 0 0.5rem 0;
   font-family: "Lora", serif;
+  text-align: justify;
   font-weight: 500;
   color: var(--secondary-color);
 }
@@ -92,6 +93,7 @@ button:active {
   .pagina-principal p {
     font-size: 0.795rem;
   }
+
   button {
     font-size: 0.6rem;
     padding: 0.4rem 0.5rem;
@@ -113,7 +115,6 @@ button:active {
   }
 
   .pagina-principal p {
-    text-align: justify;
     font-size: 0.7rem;
   }
 }

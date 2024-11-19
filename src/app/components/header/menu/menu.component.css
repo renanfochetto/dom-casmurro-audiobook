@@ -3,7 +3,7 @@
   position: fixed;
   font-family: "Roboto", sans-serif;
   top: 12px;
-  right: -250px;
+  right: -500px;
   background-color: rgba(0, 0, 0, 0);
   transition: right 0.5s ease;
   display: flex;
@@ -16,8 +16,8 @@
 }
 
 .menu-hamburger:not(.aberto) {
-  right: -250px; /* Mover para fora da tela */
-  transition: right 1s ease; /* Suavizar o fechamento */
+  right: -500px;
+  transition: right 1s ease;
 }
 
 .menu-hamburger ul {
@@ -56,7 +56,7 @@
 @media (max-width: 1023px) {
   .menu-hamburger.aberto {
     top: 0rem;
-    right: 1rem;
+    right: 3.5rem;
   }
 
   .menu-hamburger ul {
@@ -72,7 +72,6 @@
 @media only screen and (max-width: 1024px) and (orientation: portrait) {
   .menu-hamburger {
     top: 0.6rem;
-    right: -500px;
   }
 
   .menu-hamburger ul {
@@ -92,8 +91,17 @@
 
 @media (max-width: 479px) {
 
+  .menu-hamburger.aberto {
+    top: 0.6rem;
+    right: 0.8rem;
+  }
+
+  .menu-hamburger ul {
+    gap: 1.8rem;
+  }
 
   .menu-hamburger ul li a {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
+
 }
